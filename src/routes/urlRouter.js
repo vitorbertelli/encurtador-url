@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { encurtarUrl, redirecionarUrl } from "../controller/urlController.js";
+import { urlShortener, redirectUrl } from "../controllers/urlController.js";
 
 const router = Router();
 
 router
   .route('/url')
-  .post(encurtarUrl);
+  .post(urlShortener);
 
 router
   .route('/:hash')
-  .get(redirecionarUrl);
+  .get(redirectUrl);
 
 export default router;
